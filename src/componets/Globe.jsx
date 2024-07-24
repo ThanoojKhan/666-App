@@ -48,30 +48,47 @@ const Globe = () => {
 
     if (!canvasRef.current) return;
 
-    const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: 600 * 2,
-      height: 600 * 2,
-      phi: 0,
-      theta: 0,
-      dark: 1,
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.3, 0.3, 0.3],
-      markerColor: [0.1, 0.8, 1],
-      glowColor: [1, 1, 1],
-      markers: userLocation.lat && userLocation.lng ? [
-        { location: [userLocation.lat, userLocation.lng], size: 0.05, name: "Your Location" },
-      ] : [],
-      onRender: (state) => {
-        state.phi = phi;
-        phi += 0.01;
-      },
+    const resizeGlobe = () => {
+      const canvas = canvasRef.current;
+      const size = Math.min(window.innerWidth, window.innerHeight) * 0.8;
+      canvas.width = size * 2;
+      canvas.height = size * 2;
+
+      const globe = createGlobe(canvas, {
+        devicePixelRatio: 2,
+        width: canvas.width,
+        height: canvas.height,
+        phi: 0,
+        theta: 0,
+        dark: 1,
+        diffuse: 1.2,
+        mapSamples: 16000,
+        mapBrightness: 6,
+        baseColor: [0.3, 0.3, 0.3],
+        markerColor: [0.1, 0.8, 1],
+        glowColor: [1, 1, 1],
+        markers: userLocation.lat && userLocation.lng ? [
+          { location: [userLocation.lat, userLocation.lng], size: 0.05, name: "Your Location" },
+        ] : [],
+        onRender: (state) => {
+          state.phi = phi;
+          phi += 0.01;
+        },
+      });
+
+      return globe;
+    };
+
+    let globe = resizeGlobe();
+
+    window.addEventListener('resize', () => {
+      if (globe) globe.destroy();
+      globe = resizeGlobe();
     });
 
     return () => {
-      globe.destroy();
+      if (globe) globe.destroy();
+      window.removeEventListener('resize', resizeGlobe);
     };
   }, [userLocation]);
 
@@ -90,7 +107,7 @@ const Globe = () => {
     <div className="relative flex flex-col items-center justify-center h-screen">
       <canvas
         ref={canvasRef}
-        style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+        style={{ width: '80vw', height: '80vw', maxWidth: 600, maxHeight: 600 }}
       />
       <div className="absolute top-4 left-4 p-4 text-black dark:text-white rounded-lg shadow-lg">
         <h2 className="text-lg font-semibold">Current Location</h2>
@@ -100,7 +117,6 @@ const Globe = () => {
         <p className="text-sm">{currentDate}</p>
       </div>
     </div>
-
   );
 };
 
