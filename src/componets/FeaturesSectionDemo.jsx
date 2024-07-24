@@ -6,7 +6,6 @@ import SkeletonFour from './SkeletonFour';
 import FeatureCard from './FeatureCard';
 import FeatureTitle from './FeatureTitle';
 import FeatureDescription from './FeatureDescription';
-import Video from '../assets/Video/CarWashCinematicVideo.mp4';
 
 export function FeaturesSectionDemo() {
     const features = [

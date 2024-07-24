@@ -1,13 +1,12 @@
 import React from 'react';
-import Video from '../assets/Video/CarWashCinematicVideo.mp4';
 
 export function LandingPage() {
 
     return (
-        <div className="h-screen p-0 h-screen w-screen overflow-hidden">
+        <div className="h-screen p-0 w-screen overflow-hidden">
             <video
                 className="absolute top-0 left-0 w-screen h-screen object-cover"
-                src={Video}
+                src='https://res.cloudinary.com/diov69qe2/video/upload/v1721826407/CarWashCinematicVideo_yvwqtj.mp4'
                 autoPlay
                 muted
                 loop
