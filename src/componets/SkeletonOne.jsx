@@ -1,4 +1,5 @@
 import React from "react";
+import Image from '../assets/images/pic3.jpeg'
 
 const SkeletonOne = () => {
   return (
@@ -6,7 +7,7 @@ const SkeletonOne = () => {
       <div className="w-full p-5 mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2">
           <img
-            src="https://as2.ftcdn.net/v2/jpg/07/31/76/57/1000_F_731765717_6x9GjfrnQa3iCbUoP7P6RfwKCofuOoIc.jpg"
+            src={Image}
             alt="header"
             width="800"
             height="800"

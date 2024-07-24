@@ -1,15 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import pic1 from '../assets/images/pic1.jpeg';
+import pic2 from '../assets/images/pic2.jpeg';
+import pic3 from '../assets/images/pic3.jpeg';
+import pic4 from '../assets/images/pic4.jpeg';
 
 const SkeletonTwo = () => {
-    const images = [
-        "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    ];
+    const images = [pic1, pic2, pic3, pic4, pic3, pic1];
 
     const imageVariants = {
         whileHover: {
@@ -25,11 +22,11 @@ const SkeletonTwo = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center p-8 gap-10 h- overflow-hidden">
+        <div className="relative flex flex-col items-center p-8 gap-10 h-full overflow-hidden">
             <div className="flex flex-row">
                 {images.slice(0, 3).map((image, idx) => (
                     <motion.div
-                        key={"images-first" + idx}
+                        key={"images-first-" + idx}
                         style={{ rotate: Math.random() * 20 - 10 }}
                         variants={imageVariants}
                         whileHover="whileHover"
@@ -38,7 +35,7 @@ const SkeletonTwo = () => {
                     >
                         <img
                             src={image}
-                            alt="bali images"
+                            alt={`Image ${idx}`}
                             className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
                         />
                     </motion.div>
@@ -47,7 +44,7 @@ const SkeletonTwo = () => {
             <div className="flex flex-row">
                 {images.slice(3).map((image, idx) => (
                     <motion.div
-                        key={"images-second" + idx}
+                        key={"images-second-" + idx}
                         style={{ rotate: Math.random() * 20 - 10 }}
                         variants={imageVariants}
                         whileHover="whileHover"
@@ -56,7 +53,7 @@ const SkeletonTwo = () => {
                     >
                         <img
                             src={image}
-                            alt="bali images"
+                            alt={`Image ${idx + 3}`}
                             className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
                         />
                     </motion.div>
