@@ -59,8 +59,8 @@ const SkeletonTwo = () => {
                     </motion.div>
                 ))}
             </div>
-            <div className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r from-white dark:from-black to-transparent h-full pointer-events-none" />
-            <div className="absolute right-0 z-[100] inset-y-0 w-20 bg-gradient-to-l from-white dark:from-black to-transparent h-full pointer-events-none" />
+            <div className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r h-full pointer-events-none" />
+            <div className="absolute right-0 z-[100] inset-y-0 w-20 bg-gradient-to-l h-full pointer-events-none" />
         </div>
     );
 };
