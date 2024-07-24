@@ -4,7 +4,7 @@ import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 const SkeletonThree = () => {
     return (
         <a
-            href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
+            href="https://www.youtube.com/embed/eMBlkjCA298?autoplay=1&mute=1&loop=1&playlist=eMBlkjCA298&controls=0&showinfo=0"
             target="_blank"
             rel="noopener noreferrer" // for security reasons
             className="relative flex gap-10 h-full group/image"

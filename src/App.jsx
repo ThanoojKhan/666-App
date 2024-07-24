@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <FeaturesSectionDemo />
-      <Globe/>
+      <Globe />
     </>
   )
 }

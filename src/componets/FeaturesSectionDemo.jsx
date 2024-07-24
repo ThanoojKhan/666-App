@@ -6,51 +6,55 @@ import SkeletonFour from './SkeletonFour';
 import FeatureCard from './FeatureCard';
 import FeatureTitle from './FeatureTitle';
 import FeatureDescription from './FeatureDescription';
+import Video from '../assets/Video/CarWashCinematicVideo.mp4';
 
 export function FeaturesSectionDemo() {
     const features = [
         {
-            title: "Track issues effectively",
+            title: "Identify Exterior Issues",
             description:
-                "Track and manage your project issues with ease using our intuitive interface.",
+                "Effortlessly detect and manage exterior problems of your vehicle with our advanced inspection tools, ensuring a thorough and effective detailing process.",
             skeleton: <SkeletonOne />,
-            className:
-                "col-span-1 lg:col-span-6",
-        },
+            className: "col-span-1 lg:col-span-6",
+        }
+        ,
         {
-            title: "Capture pictures with AI",
+            title: "Showcasing Completed Projects",
             description:
-                "Capture stunning photos effortlessly using our advanced AI technology.",
+                "Highlight and review completed detailing projects with ease, showcasing the exceptional work done in our shop using high-quality images.",
             skeleton: <SkeletonTwo />,
             className: "col-span-1 lg:col-span-6",
+
         },
         {
-            title: "Watch our AI on YouTube",
+            title: "Watch Our Services in Action",
             description:
-                "Whether it's you or Tyler Durden, you can get to know about our product on YouTube.",
+                "Discover the quality of our detailing services by watching videos of our work on YouTube. See firsthand how we transform vehicles with our expert care.",
             skeleton: <SkeletonThree />,
-            className:
-                "col-span-1 lg:col-span-3",
+            className: "col-span-1 lg:col-span-3",
         },
+
         {
-            title: "Deploy in seconds",
+            title: "Detailing with Precision and Care",
             description:
-                "With our blazing fast, state-of-the-art, cutting-edge cloud services (read AWS) - you can deploy your model in seconds.",
+                "Experience top-tier care with our detailing services. We handle every vehicle with utmost attention to detail and precision, ensuring a flawless finish and complete satisfaction.",
             skeleton: <SkeletonFour />,
             className: "col-span-1 lg:col-span-3",
         },
+
     ];
 
     return (
         <>
             <div className="relative h-screen w-screen max-w-7xl overflow-hidden">
-                <iframe
-                    className="absolute top-0 px-0 self-center left-0 w-full h-full object-cover"
-                    src="https://www.youtube.com/embed/eMBlkjCA298?autoplay=1&mute=1&loop=1&playlist=eMBlkjCA298&controls=0&showinfo=0"
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                ></iframe>
+                <video
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    src={Video}
+                    autoPlay
+                    muted
+                    loop
+                    controls={false}
+                ></video>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                     <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl tracking-tight font-medium text-black dark:text-white">
@@ -68,7 +72,7 @@ export function FeaturesSectionDemo() {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div >
 
             <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
                 <div className="relative">
