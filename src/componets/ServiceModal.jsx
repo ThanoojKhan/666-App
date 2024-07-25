@@ -5,7 +5,7 @@ const services = [
     'Ceramic coating',
     'Graphene Coating',
     'PPF - (Paint Protection Film)',
-    'Detailing',
+    'Detailing - Interior/Exterior',
     'Headlight and taillight restoration',
     'Windscreen restoration and rain treatment',
     'Trim Restoration',
@@ -24,7 +24,9 @@ const ServiceModal = ({ isOpen, onClose }) => {
     };
 
     const handleSubmit = () => {
-        const message = `Hi Gafar. I’m interested in the following services: ${selectedServices.join(', ')}`;
+        const serviceText = selectedServices.length === 1 ? 'service' : 'services';
+        const formattedServices = selectedServices.map(service => `*${service}*`).join('\n- ');
+        const message = `Hi Gafar,\n\nI’m interested in the following ${serviceText}:\n- ${formattedServices}`;
         const whatsappUrl = `https://wa.me/+919400310556?text=${encodeURIComponent(message)}`;
         setSelectedServices([])
         window.open(whatsappUrl, '_blank');
