@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import svg from '../assets/images/WhatsApp-Logo.svg';
+import ServiceModal from './ServiceModal'; // Make sure the path is correct
 
 export function LandingPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     return (
         <div className="h-screen">
@@ -34,7 +39,7 @@ export function LandingPage() {
                 </div>
                 <div className="w-full mb-10 flex justify-center">
                     <button
-                        onClick={() => window.location.href = 'https://wa.me/+919400310556?text=I%27m%20interested%20in%20your%20car%20detailing%20services'}
+                        onClick={openModal}
                         className="inline-flex items-center px-6 py-3 text-white bg-black bg-opacity-40 rounded-lg shadow-lg hover:bg-green-400 transition-colors duration-300 ease-in-out transform hover:scale-105"
                     >
                         <img src={svg} alt="WhatsApp Logo" className="w-6 h-6" />
@@ -42,7 +47,9 @@ export function LandingPage() {
                     </button>
                 </div>
             </div>
-        </div >
+
+            <ServiceModal isOpen={isModalOpen} onClose={closeModal} />
+        </div>
     );
 }
 
