@@ -1,3 +1,6 @@
+import React from 'react';
+import svg from '../assets/images/WhatsApp-Logo.svg';
+
 export function LandingPage() {
 
     return (
@@ -10,7 +13,16 @@ export function LandingPage() {
                 loop
             ></video>
             <div className="absolute inset-0 flex flex-col items-center justify-between p-8 text-center">
-                <div className=''>
+                <div className="flex flex-col items-center justify-center w-full">
+                    <div className="mt-10 animate-fadeInOut text-yellow-700 text-8xl font-bold">
+                        666
+                    </div>
+                    <div className="animate-fadeInOut text-white text-3xl mt-5 font-medium">
+                        Detailing Studio
+                    </div>
+                    <div className="animate-fadeInOut text-white mt-2 font-medium">
+                        By Abdul Gafar
+                    </div>
                 </div>
                 <div className='items-center bg-black bg-opacity-30 backdrop-blur-sm rounded-xl p-10 justify-end bottom-0'>
                     <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl tracking-tight font-medium text-black dark:text-white">
@@ -20,12 +32,13 @@ export function LandingPage() {
                         From meticulous detailing to premium treatments, our studio offers comprehensive services to keep your car in pristine condition. Experience unparalleled quality and care for your vehicle with us.
                     </p>
                 </div>
-                <div className="w-full flex justify-center">
+                <div className="w-full mb-10 flex justify-center">
                     <button
-                        onClick={() => window.location.href = '#your-link'}
-                        className="inline-block px-6 py-3 text-white bg-yellow-600 rounded-lg shadow-lg hover:bg-white hover:text-yellow-600 transition-colors duration-300 ease-in-out transform hover:scale-105"
+                        onClick={() => window.location.href = 'https://wa.me/9400310556?text=I%27m%20interested%20in%20your%20car%20detailing%20services'}
+                        className="inline-flex items-center px-6 py-3 text-white bg-black bg-opacity-40 rounded-lg shadow-lg hover:bg-green-400 transition-colors duration-300 ease-in-out transform hover:scale-105"
                     >
-                        Learn More
+                        <img src={svg} alt="WhatsApp Logo" className="w-6 h-6" />
+                        Contact Us
                     </button>
                 </div>
             </div>

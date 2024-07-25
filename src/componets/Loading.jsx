@@ -1,12 +1,21 @@
 import React from 'react';
 import LoadingGif from '../assets/loading.gif';
+import LoadingSpinner from './LoadingSpinner';
 
 function Loading() {
     return (
         <div className="flex flex-col items-center justify-center h-screen">
-            <img src={LoadingGif} alt="Loading..." className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40" />
-            <div className="mt-4 text-xl font-bold text-white animate-pulse md:text-2xl lg:text-3xl">
-                666 Detailing Studio
+            <LoadingSpinner />
+            <div className="flex flex-col items-center justify-center w-full">
+                <div className="mt-10 animate-fadeInOut text-yellow-700 text-8xl shadow-md font-bold">
+                    666
+                </div>
+                <div className="animate-fadeInOut text-white text-3xl mt-5 shadow-md font-medium">
+                    Detailing Studio
+                </div>
+                <div className="animate-fadeInOut text-white mt-2 shadow-md font-medium">
+                    By Abdul Gafar
+                </div>
             </div>
         </div>
     );
