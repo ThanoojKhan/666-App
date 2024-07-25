@@ -1,10 +1,13 @@
 import SkeletonOne from './SkeletonOne';
+import SkeletonOneCopy from './SkeletonOnecopy';
 import SkeletonTwo from './SkeletonTwo';
 import SkeletonThree from './SkeletonThree';
 import SkeletonFour from './SkeletonFour';
 import FeatureCard from './FeatureCard';
 import FeatureTitle from './FeatureTitle';
 import FeatureDescription from './FeatureDescription';
+import Image from '../assets/images/pic6.jpg';
+import Image2 from '../assets/images/interior4.jpg';
 
 export function FeaturesSectionDemo() {
     const features = [
@@ -12,16 +15,17 @@ export function FeaturesSectionDemo() {
             title: "Identify Exterior Issues",
             description:
                 "Effortlessly detect and manage exterior problems of your vehicle with our advanced inspection tools, ensuring a thorough and effective detailing process.",
-            skeleton: <SkeletonOne />,
+            skeleton: <SkeletonOne image={Image} />,
             className: "col-span-1 lg:col-span-3",
         },
         {
-            title: "Identify Exterior Issues",
+            title: "Identify Interior Issues",
             description:
-                "Effortlessly detect and manage exterior problems of your vehicle with our advanced inspection tools, ensuring a thorough and effective detailing process.",
-            skeleton: <SkeletonOne />,
+                "Easily spot and address interior problems of your vehicle with our specialized tools and techniques, ensuring a meticulous and comprehensive cleaning and restoration process.",
+            skeleton: <SkeletonOneCopy image={Image2} />,
             className: "col-span-1 lg:col-span-3",
-        },
+        }
+        ,
         {
             title: "Showcasing Completed Projects",
             description:

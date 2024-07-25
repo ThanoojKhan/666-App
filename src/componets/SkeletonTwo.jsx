@@ -3,9 +3,11 @@ import pic1 from '../assets/images/pic1.jpeg';
 import pic2 from '../assets/images/pic2.jpeg';
 import pic3 from '../assets/images/pic3.jpeg';
 import pic4 from '../assets/images/pic4.jpeg';
+import pic5 from '../assets/images/pic5.jpg';
+import pic6 from '../assets/images/pic7.jpg';
 
 const SkeletonTwo = () => {
-    const images = [pic1, pic2, pic3, pic4, pic3, pic1];
+    const images = [pic1, pic5, pic2, pic3, pic4, pic6];
 
     const imageVariants = {
         whileHover: {

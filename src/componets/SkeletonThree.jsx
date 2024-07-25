@@ -1,5 +1,5 @@
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
-import Image from '../assets/images/pic2.jpeg'
+import Image from '../assets/images/pic6.jpg'
 
 const SkeletonThree = () => {
     return (
