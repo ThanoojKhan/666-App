@@ -9,9 +9,9 @@ export function LandingPage() {
     const closeModal = () => setIsModalOpen(false);
 
     return (
-        <div className="h-screen">
+        <div className="h-screen min-h-[1000px]">
             <video
-                className="absolute top-0 left-0 right-0 w-screen h-screen object-cover"
+                className="absolute top-0 left-0 right-0 w-screen h-screen min-h-[800px] object-cover"
                 src='https://res.cloudinary.com/diov69qe2/video/upload/v1721826407/CarWashCinematicVideo_yvwqtj.mp4'
                 autoPlay
                 muted
@@ -29,7 +29,7 @@ export function LandingPage() {
                         By Abdul Gafar
                     </div>
                 </div>
-                <div className='items-center bg-black bg-opacity-30 backdrop-blur-sm rounded-xl p-10 justify-end bottom-0'>
+                <div className='items-center my-3 bg-black bg-opacity-30 backdrop-blur-sm rounded-xl p-10 justify-end bottom-0'>
                     <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl tracking-tight font-medium text-black dark:text-white">
                         Exceptional Care for Every Car
                     </h4>
