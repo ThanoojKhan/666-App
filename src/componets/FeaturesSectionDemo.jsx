@@ -1,4 +1,3 @@
-import React from 'react';
 import SkeletonOne from './SkeletonOne';
 import SkeletonTwo from './SkeletonTwo';
 import SkeletonThree from './SkeletonThree';
@@ -14,9 +13,15 @@ export function FeaturesSectionDemo() {
             description:
                 "Effortlessly detect and manage exterior problems of your vehicle with our advanced inspection tools, ensuring a thorough and effective detailing process.",
             skeleton: <SkeletonOne />,
-            className: "col-span-1 lg:col-span-6",
-        }
-        ,
+            className: "col-span-1 lg:col-span-3",
+        },
+        {
+            title: "Identify Exterior Issues",
+            description:
+                "Effortlessly detect and manage exterior problems of your vehicle with our advanced inspection tools, ensuring a thorough and effective detailing process.",
+            skeleton: <SkeletonOne />,
+            className: "col-span-1 lg:col-span-3",
+        },
         {
             title: "Showcasing Completed Projects",
             description:

@@ -9,7 +9,7 @@ function App() {
     <>
       <LandingPage />
       <FeaturesSectionDemo />
-      <Globe />
+      {/* <Globe /> */}
     </>
   )
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Image from '../assets/images/pic2.jpeg'
 
