@@ -1,5 +1,4 @@
 import React from 'react';
-import LoadingGif from '../assets/loading.gif';
 import LoadingSpinner from './LoadingSpinner';
 
 function Loading() {
