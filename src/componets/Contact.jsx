@@ -5,6 +5,8 @@ import L from 'leaflet';
 import markerIconPng from 'leaflet/dist/images/marker-icon.png';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -65,7 +67,8 @@ const carNames = [
     'Seltos', 'Sonet', 'Carnival'
 ];
 
-const locations = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'];
+const locations = ['Malappuram', 'Manjeri', 'Perinthalmanna', 'Ponnani', 'Tirur',
+    'Nilambur', 'Kondotty', 'Eranad', 'Vallikkunnu', 'Kadalundi']
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -99,7 +102,12 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validatePhoneNumber(formData.phoneNumber)) {
-            alert('Please enter a valid phone number (10 digits).');
+            toast.error('Please enter a valid phone number (10 digits).', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+            });
             return;
         }
 
@@ -116,7 +124,12 @@ function Contact() {
         try {
             const docRef = await addDoc(enquiriesCollection, formattedData);
             console.log('Document written with ID: ', docRef.id);
-            alert('Your enquiry has been sent!');
+            toast.success('Your enquiry has been sent!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+            });
             setFormData({
                 name: '',
                 carBrand: '',
@@ -140,12 +153,18 @@ function Contact() {
                         errorMessage = 'An unexpected error occurred.';
                 }
             }
-            alert(errorMessage);
+            toast.error(errorMessage, {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+            });
         }
     };
 
     return (
         <div className="p-6 flex flex-col items-center">
+            <ToastContainer />
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <form onSubmit={handleSubmit} className="space-y-4 flex flex-col justify-center items-center mb-6 w-full max-w-4xl">
                 <div className='grid grid-cols-1 w-full'>

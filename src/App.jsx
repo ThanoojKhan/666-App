@@ -19,16 +19,16 @@ function App() {
 
   return (
     <>
-      {/* {isLoading ?  */}
-      {/* <Loading /> */}
-      {/* : <> */}
-      <LandingPage />
-      <FeaturesSectionDemo />
-      <Contact />
-      <Location/>
+      {isLoading ?
+        <Loading />
+        : <>
+          <LandingPage />
+          <FeaturesSectionDemo />
+          <Contact />
+          <Location />
+        </>
+      }
     </>
-      // }
-    // </>
   );
 }
 
