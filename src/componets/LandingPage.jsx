@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import svg from '../assets/images/WhatsApp-Logo.svg';
-import ServiceModal from './ServiceModal'; // Make sure the path is correct
+import ServiceModal from './ServiceModal';
 
 export function LandingPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,9 +9,9 @@ export function LandingPage() {
     const closeModal = () => setIsModalOpen(false);
 
     return (
-        <div className="h-screen min-h-[1000px]">
+        <div className="h-screen min-h-[730px]">
             <video
-                className="absolute top-0 left-0 right-0 w-screen h-screen min-h-[800px] object-cover"
+                className="absolute top-0 left-0 right-0 w-screen h-screen min-h-[770px] object-cover"
                 src='https://res.cloudinary.com/diov69qe2/video/upload/v1721826407/CarWashCinematicVideo_yvwqtj.mp4'
                 autoPlay
                 muted
@@ -37,7 +37,7 @@ export function LandingPage() {
                         From meticulous detailing to premium treatments, our studio offers comprehensive services to keep your car in pristine condition. Experience unparalleled quality and care for your vehicle with us.
                     </p>
                 </div>
-                <div className="w-full mb-10 flex justify-center">
+                <div className="w-full m-10 flex justify-center">
                     <button
                         onClick={openModal}
                         className="inline-flex items-center px-6 py-3 text-white bg-black bg-opacity-40 rounded-lg shadow-lg hover:bg-green-400 transition-colors duration-300 ease-in-out transform hover:scale-105"
@@ -47,7 +47,6 @@ export function LandingPage() {
                     </button>
                 </div>
             </div>
-
             <ServiceModal isOpen={isModalOpen} onClose={closeModal} />
         </div>
     );
