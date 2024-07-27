@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import markerIconPng from 'leaflet/dist/images/marker-icon.png';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -118,10 +118,31 @@ function Contact() {
             servicesRequired: formData.serviceRequired,
             phoneNumber: formData.phoneNumber,
             location: formData.location,
-            createdAt: new Date()
+            createdAt: new Date(),
+            attended: false
         };
 
         try {
+            const q = query(enquiriesCollection, where('phoneNumber', '==', formData.phoneNumber), where('attended', '==', false));
+            const querySnapshot = await getDocs(q);
+            if (!querySnapshot.empty) {
+                toast.info('We have received your enquiry. We will contact you soon.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                });
+                setFormData({
+                    name: '',
+                    carBrand: '',
+                    carName: '',
+                    serviceRequired: [],
+                    phoneNumber: '',
+                    location: '',
+                });
+                return;
+            }
+
             const docRef = await addDoc(enquiriesCollection, formattedData);
             console.log('Document written with ID: ', docRef.id);
             toast.success('Your enquiry has been sent!', {
@@ -165,7 +186,7 @@ function Contact() {
     return (
         <div className="p-6 flex flex-col items-center">
             <ToastContainer />
-            <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+            <h2 className="text-2xl font-bold mb-4">Send Us Your Enquiries</h2>
             <form onSubmit={handleSubmit} className="space-y-4 flex flex-col justify-center items-center mb-6 w-full max-w-4xl">
                 <div className='grid grid-cols-1 w-full'>
                     <label className="block text-sm font-medium">Your Name</label>
